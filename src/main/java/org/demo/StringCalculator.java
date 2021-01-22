@@ -10,9 +10,9 @@ public class StringCalculator {
         }
         else {
             String[] numberArray = numbers.split(",");
-            int total = parseInt(numberArray[0]);
-            if(numberArray.length > 1) {
-                total += parseInt(numberArray[1]);
+            int total = 0;
+            for (String number: numberArray) {
+                total += parseInt(number);
             }
             return total;
         }
