@@ -58,4 +58,16 @@ public class StringCalculatorTest {
         assertEquals(1007, StringCalculator.add("4,3,1000,1001"));
         assertEquals(3, StringCalculator.add("//\t\n1\t2\t2000"));
     }
+
+    @Test
+    public void testMultiCharacterDelimiter() {
+        assertEquals(3, StringCalculator.add("//[***]\n1***2***2000"));
+        assertEquals(99, StringCalculator.add("//[$$]\n1$$2$$$$33\n31$$32"));
+    }
+
+    @Test
+    public void testMultipleDelimiters() {
+        assertEquals(100, StringCalculator.add("//[|][;]\n1;2||33\n31;32|1"));
+        assertEquals(13, StringCalculator.add("//[***][;]\n1***2***2000;5;5"));
+    }
 }
