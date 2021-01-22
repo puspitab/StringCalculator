@@ -27,4 +27,14 @@ public class StringCalculatorTest {
         assertEquals(120, StringCalculator.add("14,13,22,71,0"));
     }
 
+    @Test
+    public void testLineBreak() {
+        assertEquals(27, StringCalculator.add("14\n13"));
+    }
+
+    @Test
+    public void testLineBreak2() {
+        assertEquals(27, StringCalculator.add("14,13,\n"));
+    }
+
 }

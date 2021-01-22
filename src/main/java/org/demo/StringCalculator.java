@@ -9,7 +9,7 @@ public class StringCalculator {
             return 0;
         }
         else {
-            String[] numberArray = numbers.split(",");
+            String[] numberArray = numbers.split("[,\n]");
             int total = 0;
             for (String number: numberArray) {
                 total += parseInt(number);
