@@ -37,4 +37,11 @@ public class StringCalculatorTest {
         assertEquals(27, StringCalculator.add("14,13,\n"));
     }
 
+    @Test
+    public void testDifferentDelimiter() {
+        assertEquals(3, StringCalculator.add("//;\n1;2"));
+        assertEquals(99, StringCalculator.add("//|\n1|2||33\n31|32"));
+        assertEquals(3, StringCalculator.add("//\t\n1\t2"));
+    }
+
 }
