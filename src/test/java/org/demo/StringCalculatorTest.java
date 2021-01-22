@@ -53,4 +53,9 @@ public class StringCalculatorTest {
         }
     }
 
+    @Test
+    public void testNumbersOverThousand() {
+        assertEquals(1007, StringCalculator.add("4,3,1000,1001"));
+        assertEquals(3, StringCalculator.add("//\t\n1\t2\t2000"));
+    }
 }

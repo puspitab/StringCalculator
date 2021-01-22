@@ -27,7 +27,7 @@ public class StringCalculator {
                             negatives += ", " +number;
                         }
                     }
-                    else {
+                    else if(parseInt(number) <= 1000){
                         total += parseInt(number);
                     }
                 }
