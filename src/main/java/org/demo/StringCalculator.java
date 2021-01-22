@@ -16,12 +16,26 @@ public class StringCalculator {
             }
             String[] numberArray = numbers.split("["+delim+"\n]");
             int total = 0;
+            String negatives = "";
             for (String number: numberArray) {
                 if (!number.isEmpty()) {
-                    total += parseInt(number);
+                    if (parseInt(number) < 0) {
+                        if (negatives.isEmpty()) {
+                            negatives = number;
+                        }
+                        else {
+                            negatives += ", " +number;
+                        }
+                    }
+                    else {
+                        total += parseInt(number);
+                    }
                 }
             }
-            return total;
+            if (!negatives.isEmpty())
+                throw new NegativeNumberException("String contains negative numbers: " + negatives);
+            else
+                return total;
         }
     }
 

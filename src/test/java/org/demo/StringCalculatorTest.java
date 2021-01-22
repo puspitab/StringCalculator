@@ -44,4 +44,13 @@ public class StringCalculatorTest {
         assertEquals(3, StringCalculator.add("//\t\n1\t2"));
     }
 
+    @Test
+    public void testNegativeNumbers() {
+        try {
+            assertEquals(0, StringCalculator.add("-14,-13,\n"));
+        } catch (NegativeNumberException e) {
+            assertEquals("String contains negative numbers: -14, -13",e.getExMsg());
+        }
+    }
+
 }
